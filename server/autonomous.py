@@ -15,7 +15,7 @@ busnum = 1  # Edit busnum to 0, if you uses Raspberry Pi 1 or 0
 
 car_dir.setup(busnum=busnum)
 motor.setup(busnum=busnum)  # Initialize the Raspberry Pi GPIO connected to the DC motor.
-video_dir.home_x_y()
+# video_dir.home_x_y()
 car_dir.home()
 motor.setSpeed(int(25))
 motor.forward()

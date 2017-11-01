@@ -27,23 +27,34 @@ car_dir.setup(busnum=busnum)
 motor.setup(busnum=busnum)  # Initialize the Raspberry Pi GPIO connected to the DC motor.
 video_dir.home_x_y()
 car_dir.home()
+motor.setSpeed(int(25))
+motor.forward()
+start = datetime.datetime.now()
+while (datetime.datetime.now()-start).seconds < 3:
+    pass
 
-def do_forward(_time_delta, start_time):
-    '''
-    The motor controls seem to be inverted for some reason...
-    :param _time:
-    :return:
-    '''
 
+motor.ctrl(0)
+#while True:
+#    pass
+
+#def do_forward(_time_delta, start_time):
+#    '''
+#    The motor controls seem to be inverted for some reason...
+#    :param _time:
+#    :return:
+#    '''
+ #   print "doing forward"
+#    motor.setSpeed(50)
     # while (start_time-datetime.datetime.now()).seconds < _time_delta:
-    while True:
-        motor.backward()
+  #  while True:
+   #     motor.backward(50)
 
 
-import time
+#import time
 # start_time = datetime.datetime.now()
 # print (start_time-datetime.datetime.now()).seconds
-time.sleep(10)
+#time.sleep(10)
 # do_forward(3,datetime.datetime.now())
 
 

@@ -35,13 +35,13 @@ def do_forward(_time_delta, start_time):
     :return:
     '''
 
-    while datetime.timedelta(start_time-datetime.datetime.now()).seconds < _time_delta:
+    while (start_time-datetime.datetime.now()).seconds < _time_delta:
         motor.backward()
 
 
 import time
 start_time = datetime.datetime.now()
-print datetime.timedelta(start_time-datetime.datetime.now()).seconds
+print (start_time-datetime.datetime.now()).seconds
 time.sleep(10)
 do_forward(1,start_time )
 

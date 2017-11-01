@@ -36,7 +36,8 @@ def do_forward(_time_delta, start_time):
     '''
 
     # while (start_time-datetime.datetime.now()).seconds < _time_delta:
-    motor.backward()
+    while True:
+        motor.backward()
 
 
 import time

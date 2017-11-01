@@ -12,17 +12,7 @@ ctrl_cmd = ['forward', 'backward', 'left', 'right', 'stop', 'read cpu_temp', 'ho
 
 busnum = 1  # Edit busnum to 0, if you uses Raspberry Pi 1 or 0
 
-HOST = ''  # The variable of HOST is null, so the function bind( ) can be bound to all valid addresses.
-PORT = 21567
-BUFSIZ = 1024  # Size of the buffer
-ADDR = (HOST, PORT)
 
-tcpSerSock = socket(AF_INET, SOCK_STREAM)  # Create a socket.
-tcpSerSock.bind(ADDR)  # Bind the IP address and port number of the server.
-tcpSerSock.listen(5)  # The parameter of listen() defines the number of connections permitted at one time. Once the
-# connections are full, others will be rejected.
-
-video_dir.setup(busnum=busnum)
 car_dir.setup(busnum=busnum)
 motor.setup(busnum=busnum)  # Initialize the Raspberry Pi GPIO connected to the DC motor.
 video_dir.home_x_y()
@@ -32,6 +22,11 @@ motor.forward()
 start = datetime.datetime.now()
 while (datetime.datetime.now()-start).seconds < 3:
     pass
+car_dir.turn_right()
+while (datetime.datetime.now()-start).seconds < 3:
+    pass
+
+
 
 
 motor.ctrl(0)

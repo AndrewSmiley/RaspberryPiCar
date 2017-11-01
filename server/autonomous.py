@@ -35,7 +35,7 @@ def do_forward(_time_delta, start_time):
     :return:
     '''
 
-    while datetime.timedelta(datetime.datetime.now()-start_time).seconds < _time_delta:
+    while datetime.timedelta(start_time-datetime.datetime.now()).seconds < _time_delta:
         motor.backward()
 
 

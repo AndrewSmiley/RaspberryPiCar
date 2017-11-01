@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 import video_dir
 import car_dir
 import motor
@@ -40,10 +40,10 @@ def do_forward(_time_delta, start_time):
 
 
 import time
-start_time = datetime.datetime.now()
-print (start_time-datetime.datetime.now()).seconds
+# start_time = datetime.datetime.now()
+# print (start_time-datetime.datetime.now()).seconds
 time.sleep(10)
-do_forward(1,start_time )
+do_forward(3,datetime.datetime.now())
 
 
 

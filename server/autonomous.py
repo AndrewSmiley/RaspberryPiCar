@@ -23,17 +23,33 @@ start = datetime.datetime.now()
 while (datetime.datetime.now()-start).seconds < 3:
     pass
 motor.ctrl(0)
-car_dir.turn_right()
-car_dir.turn_right()
-motor.forward()
-while (datetime.datetime.now()-start).seconds < 3:
+
+#while (datetime.datetime.now() -
+#car_dir.turn_right()
+#car_dir.turn_right()
+#motor.forward()
+print "pausing"
+start= datetime.datetime.now()
+#pause for 2 seconds
+while (datetime.datetime.now()-start).seconds < 2:
     pass
 
-car_dir.home()
+print "turnign left"
+car_dir.turn(60)
+
 motor.forward()
 start = datetime.datetime.now()
+
 while (datetime.datetime.now()-start).seconds < 3:
     pass
+motor.ctrl(0)
+
+
+#car_dir.home()
+#motor.forward()
+#start = datetime.datetime.now()
+#while (datetime.datetime.now()-start).seconds < 3:
+#    pass
 
 
 

@@ -43,6 +43,14 @@ start = datetime.datetime.now()
 while (datetime.datetime.now()-start).seconds < 3:
     pass
 motor.ctrl(0)
+print "pausing again"
+print "go home"
+car_dir.home()
+motor.forward()
+start = datetime.datetime.now() 
+while (datetime.datetime.now()-start).seconds < 3:
+    pass
+motor.ctrl(0)
 
 
 #car_dir.home()

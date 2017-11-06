@@ -22,14 +22,23 @@ motor.forward()
 start = datetime.datetime.now()
 while (datetime.datetime.now()-start).seconds < 3:
     pass
+motor.ctrl(0)
 car_dir.turn_right()
+car_dir.turn_right()
+motor.forward()
+while (datetime.datetime.now()-start).seconds < 3:
+    pass
+
+car_dir.home()
+motor.forward()
+start = datetime.datetime.now()
 while (datetime.datetime.now()-start).seconds < 3:
     pass
 
 
 
 
-motor.ctrl(0)
+
 #while True:
 #    pass
 
